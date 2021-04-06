@@ -1,0 +1,22 @@
+package guru.springframework.msscbreweryclient.web.client;
+
+import guru.springframework.msscbreweryclient.web.model.BeerDto;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class BreweryClientTest {
+
+    @Autowired
+    BreweryClient client;
+
+    @Test
+    void getBeerById() {
+        BeerDto beerDto= client.getBeerById(UUID.randomUUID());
+
+        assertNotNull(beerDto);
+    }
+}
